@@ -20,6 +20,7 @@ h1 {
     font-size: 2.7em;
     margin-bottom: 0;
     text-shadow: 0 1px 0 #fff;
+    color: rgba(0, 0, 0, 0.85);
 }
 
 footer {
@@ -57,6 +58,7 @@ canvas {
     align-content: flex-end;
     align-self: center;
     width: 800px;
+
 }
 
 #score p {
@@ -65,6 +67,7 @@ canvas {
     margin-left: auto;
     margin-bottom: 0;
     margin-top: 0;
-    color: red;
+    color: black;
     font-size: 1.2em;
+    background-color:  rgba(255, 255, 255, 0.5);
 }
