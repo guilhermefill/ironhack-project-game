@@ -1,5 +1,5 @@
 const heroSize = 50;
-const obstacleSize = 25;
+const obstacleSize = 30;
 const heroSpeed = 20;
 const obstacleSpeed = 1;
 const pfandValue = 0.25;

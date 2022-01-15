@@ -1,7 +1,7 @@
 const scene = new Scene();
 const hero = new Hero();
-let obstacleArray = [];
-let pfandArray = [];
+let obstacleArray = new Array(3).fill(null).map(poop => new Poop());
+let pfandArray = new Array(3).fill(null).map(poop => new Pfand());
 let wallet = 1.00;
 const scoreboard = document.getElementById('wallet')
 
@@ -18,23 +18,23 @@ const detectCollision = (obj,array) => {
 }
 
 const addObstacle = () => {
-    setInterval(() => {obstacleArray.push(new Poop())}, 4000)
-    setInterval(() => {obstacleArray.push(new Crazy())}, 10000)
-    setInterval(() => {obstacleArray.push(new Biker())}, 20000)
+    setInterval(() => {obstacleArray.push(new Poop())}, 2000)
+    setInterval(() => {obstacleArray.push(new Crazy())}, 8000)
+    setInterval(() => {obstacleArray.push(new Biker())}, 14000)
     setInterval(() => {pfandArray.push(new Pfand())}, 3000)
 }
 
 const removeObstacle = (obj, array) => {
-    if (obj.x < 0) {
+    if ((obj.x * obj.width) < 0) {
         array.splice(array.indexOf(obj), 1);
     }
 }
 
 const winCondition = () => {
-    if(wallet <= 0) {
+    if(wallet.toFixed(2) <= 0.00) {
         gameOver = true;
         startGame = false;
-    } else if (wallet >= 3) {
+    } else if (wallet.toFixed(2) >= 3.50) {
         gameWon = true;
         startGame = false;
     }
@@ -96,6 +96,7 @@ function update() {
         clearInterval(addObstacle)
         obstacleArray = [];
         pfandArray = [];
+        wallet = 0;
     }
     scoreboard.innerHTML = '💰💰 Wallet: ' + wallet.toFixed(2);
     requestAnimationFrame(update);
