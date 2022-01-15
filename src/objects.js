@@ -105,6 +105,7 @@ class Obstacle {
         this.speed = obstacleSpeed;
         this.image = new Image();
         this.scoreValue = obstacleValue
+        this.sound = new Audio();
     }
     draw() { 
         this.x -= this.speed;
@@ -119,6 +120,7 @@ class Poop extends Obstacle {
         this.speed *= 1.4
         this.scoreValue /= 5
         this.image.src = "./images/poopEmoji.png"
+        this.sound.src = './sounds/poopSound.wav';
     }
 }
 
@@ -129,6 +131,7 @@ class Crazy extends Obstacle {
         this.height *= 4.5;
         this.width *= 3.5;
         this.image.src = "./images/crazyEmoji.png"
+        this.sound.src = './sounds/crazySound.wav';
     }
 }
 
@@ -140,6 +143,7 @@ class Biker extends Obstacle {
         this.width *= 3.3
         this.scoreValue *= 4
         this.image.src = "./images/bikerEmoji.png"
+        this.sound.src = './sounds/bikeSound.wav';
     }
 }
 
@@ -150,5 +154,6 @@ class Pfand extends Obstacle {
         this.width /= 2;
         this.image.src = "./images/bottleEmoji.png"
         this.scoreValue = pfandValue
+        this.sound.src = './sounds/mixkit-arcade-mechanical-bling-210.wav'
     }
 }

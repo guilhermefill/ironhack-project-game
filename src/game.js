@@ -14,6 +14,7 @@ const detectCollision = (obj,array) => {
     ) {
         array.splice(array.indexOf(obj), 1);
         wallet += obj.scoreValue;
+        obj.sound.play();
     }
 }
 
@@ -25,7 +26,7 @@ const addObstacle = () => {
 }
 
 const removeObstacle = (obj, array) => {
-    if ((obj.x * obj.width) < 0) {
+    if ((obj.x + obj.width) < 0) {
         array.splice(array.indexOf(obj), 1);
     }
 }
