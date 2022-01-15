@@ -38,33 +38,22 @@ class Scene {
         
     }
     gameWon() {
+        this.ctx.fillStyle = "grey"
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
         this.text = 'CONGRATULATIONS! YOU WON!'
-        this.textMid = 'Go and get yourself a Döner!!'
-        this.textSmall = `Press 'r' to try again.`
-        this.ctx.font = '48px sans-serif'
-        this.ctx.textAlign = 'center'
-        this.ctx.textBaseline = 'middle'
-        this.ctx.fillText(this.text, this.canvas.width / 2, this.canvas.height / 2.5)
-        this.ctx.font = '36px sans-serif'
-        this.ctx.textAlign = 'center'
-        this.ctx.textBaseline = 'middle'
-        this.ctx.fillText(this.textMid, this.canvas.width / 2, (this.canvas.height / 2))
-        this.ctx.font = '16px sans-serif'
-        this.ctx.textAlign = 'center'
-        this.ctx.textBaseline = 'middle'
-        this.ctx.fillText(this.textSmall, this.canvas.width / 2, (this.canvas.height / 1.5))
-    }
-    gameOver() {
-        this.text = 'GAME OVER'
-        this.textSmall = `Press 'r' to try again.`
         this.ctx.font = '48px sans-serif'
         this.ctx.textAlign = 'center'
         this.ctx.textBaseline = 'middle'
         this.ctx.fillText(this.text, this.canvas.width / 2, this.canvas.height / 2)
-        this.ctx.font = '16px sans-serif'
+    }
+    gameOver() {
+        this.ctx.fillStyle = "grey"
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
+        this.text = 'GAME OVER'
+        this.ctx.font = '48px sans-serif'
         this.ctx.textAlign = 'center'
         this.ctx.textBaseline = 'middle'
-        this.ctx.fillText(this.textSmall, this.canvas.width / 2, (this.canvas.height / 1.5))
+        this.ctx.fillText(this.text, this.canvas.width / 2, this.canvas.height / 2)
     }
 } 
 
