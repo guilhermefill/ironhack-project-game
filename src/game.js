@@ -53,6 +53,7 @@ document.addEventListener('keydown', event => {
     }
     if(pressedKey === 'Enter') {
         startGame = true;
+        addObstacle();
     } 
     if (pressedKey === 'r') {
         startGame = true;
@@ -63,7 +64,7 @@ document.addEventListener('keydown', event => {
 
 })
 
-addObstacle();
+
 
 function update() {
     if (!startGame) {
