@@ -10,6 +10,8 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('./images/tv-tower-6139241_1920.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
     background-attachment: fixed;
     overflow: auto;
     font-family: 'Roboto', sans-serif;

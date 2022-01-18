@@ -35,9 +35,13 @@ const winCondition = () => {
     if(wallet.toFixed(2) <= 0.00) {
         gameOver = true;
         startGame = false;
+        scene.mainSound.pause();
+        scene.loseSound.play();
     } else if (wallet.toFixed(2) >= 3.50) {
         gameWon = true;
         startGame = false;
+        scene.mainSound.pause();
+        scene.winSound.play();
     }
 }
 
@@ -54,17 +58,21 @@ document.addEventListener('keydown', event => {
     if(pressedKey === 'Enter') {
         startGame = true;
         addObstacle();
+        scene.mainSound.play();
+        scene.restartSound.play();
     } 
     if (pressedKey === 'r') {
         startGame = true;
         gameWon === false;
         gameOver === false;
-        wallet = 1.00
+        wallet = 1.00;
+        hero.x = 75;
+        hero.y = (scene.canvas.height / 2) - (heroSize / 2);
+        scene.restartSound.play();
+        scene.mainSound.currentTime = 0;
+        scene.mainSound.play();
     }
-
 })
-
-
 
 function update() {
     if (!startGame) {
