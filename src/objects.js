@@ -18,7 +18,7 @@ class Scene {
         this.restartSound.loop = false;
         this.mainSound =  new Audio ();
         this.mainSound.src = './sounds/mainSound.mp3';
-        this.mainSound.volume = 0.05;
+        this.mainSound.volume = 0.2;
         this.mainSound.playbackRate = 0.98
     }
     clear() {
